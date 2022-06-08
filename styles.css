@@ -1,0 +1,154 @@
+/* 
+
+
+
+#731702
+
+#F27405
+
+#03A678
+
+#02735E
+
+#014040
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@media (max-width: 100px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+body {
+    background-color: #1a0e03;
+    color: #b2f7e3;
+    font-size: 2rem;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+@media (max-width: 900px) {
+    body {}
+}
+
+.container {
+    max-width: 110rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.1em;
+}
+
+.header>* {
+    text-align: center;
+    width: 5em;
+}
+
+.timer {}
+
+.title {
+    margin-bottom: 2em;
+    color: #ffb4fc;
+    font-size: 3rem;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score>* {
+    display: block;
+}
+
+.score span:nth-child(2) {
+    background-color: #731702;
+    border-radius: 0.1em;
+    padding: 0.05em 0.15em;
+    box-shadow: 0.1em -0.1em 0.2em rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5em;
+}
+
+.ground {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.card {
+    cursor: pointer;
+    position: relative;
+    width: 5em;
+    height: 5em;
+    /* border: 2px solid #03A678; */
+    margin-bottom: 0.5em;
+    /* width: 100%; */
+    flex: 20%;
+    transition: opacity .2s linear;
+}
+
+.card--back,
+.card--front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .3s ease-in;
+    box-shadow: 0.1em -0.1em 0.1em rgba(255, 255, 255, 0.1);
+    border-radius: 0.3rem;
+}
+
+.card--front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: perspective(1000px) rotateY(0deg);
+    background: linear-gradient(to bottom right, #F27405, #731702);
+}
+
+.card--back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    transform: perspective(600px) rotateY(180deg);
+    background: linear-gradient(to bottom right, #ffb4fc, #fada9e);
+}
+
+.card--back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
